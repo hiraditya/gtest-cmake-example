@@ -7,8 +7,8 @@
 // IndependentMethod is a test case - here, we have 2 tests for this 1 test case
 TEST(IndependentMethod, ResetsToZero) {
 	int i = 3;
-	independentMethod(i);
-	EXPECT_EQ(0, i);
+	int res = independentMethod(i);
+	EXPECT_EQ(100, res);
 
 	i = 12;
 	independentMethod(i);

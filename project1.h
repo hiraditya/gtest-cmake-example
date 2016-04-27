@@ -14,6 +14,6 @@ public:
 
 };
 
-void independentMethod(int &i);
+int independentMethod(int &i);
 
 #endif /* PROJECT1_H_ */
