@@ -6,12 +6,17 @@
 class Project1 {
 
 public:
-	// why only detected if implemented here?
-	// void foo(int &i) {
-	// 	i = 1;
-	// }
-	void foo(int &i);
+  Project1()
+    : k(1000), i (0)
+  { }
 
+  void foo(int &i);
+  void increment_k();
+  int get_i();
+  int get_k();
+private:
+  int k;
+  int i;
 };
 
 int independentMethod(int &i);
