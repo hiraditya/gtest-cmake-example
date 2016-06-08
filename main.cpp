@@ -18,8 +18,9 @@ int main() {
 	Project1 p;
         cout << "\nValue of i = " << p.get_i() << '\n';
         cout << "\nValue of k = " << p.get_k() << '\n';
-	p.foo(x);
+	//p.foo(x);
 	foo(&p);
+  p.bar();
   p.increment_k();
 }
 

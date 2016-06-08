@@ -10,10 +10,14 @@ class Project1 {
 
 public:
   Project1()
-    : k(1000), i (0)
-  { }
+  {
+     k = 1000;
+     i = 0;
+  }
 
-  void foo(int &i);
+  void foo(int &i, int *j, int k);
+  void foo(int i) {  }
+  void bar();
   void increment_k();
   int get_i();
   int get_k();
@@ -26,10 +30,10 @@ int independentMethod(int &i);
 
 
 class Node {
-  Node *Left;
-  Node *Right;
   int Data;
   int Id;
+  Node *Left;
+  Node *Right;
 public:
 
   Node (int D, int I)
@@ -147,7 +151,7 @@ public:
   }
 
   void BuildBinaryTree(std::vector<int> &V) {
-    for (int i = 0; i < V.size(); ++i)
+    for (unsigned i = 0; i < V.size(); ++i)
       Insert(V[i]);
   }
 
