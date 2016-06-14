@@ -9,12 +9,9 @@
 #include <set>
 #include <vector>
 
-void Node::Dump() {
-  std::cout << "\nNodeId: " << GetId()
-            << ", Data: " << GetData()
-            << ", Ptr: " << this
-            << ", Left: " << this
-            << ", Right: " << this;
+void Node::Dump(std::ostream &os) {
+  os << "\nNodeId: " << GetId()
+     << ", Data: " << GetData();
 }
 
 void Node::DumpGV() {

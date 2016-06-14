@@ -10,6 +10,12 @@ int main() {
     B.Insert(V1[i]);
     B.Insert(V2[10 -i -1]);
   }
-  B.Dump();  
+
+  std::vector<Node*> V;
+  B.BFS(B.GetRoot(), V);
+  std::cout << V;
+
+  // Dump the graphviz representation for visualization.
+  B.Dump();
   return 0;
 }

@@ -5,6 +5,7 @@
 #include <cstdlib>
 #include <cassert>
 #include <vector>
+#include <iostream>
 
 class Node {
   int Data;
@@ -49,7 +50,7 @@ public:
     Id = d;
   }
 
-  void Dump();
+  void Dump(std::ostream &os);
   void DumpGV();
 };
 
@@ -75,6 +76,8 @@ public:
     Root->SetId(0);    
   }
 
+  Node *GetRoot() { return Root; }
+
   void BFS(Node *N, std::vector<Node *>& V);
 
   bool InsertLeft(Node *R, int N);
@@ -89,6 +92,17 @@ public:
 
   void Dump();
 };
+
+inline std::ostream& operator<<(std::ostream &os, Node* N) {
+  N->Dump(os);
+  return os;
+}
+
+inline std::ostream& operator<<(std::ostream &os, std::vector<Node*> &V) {
+  for (unsigned i = 0; i < V.size(); ++i)
+    os << V[i];
+  return os;
+}
 
 #endif // GRAPH_H
 
