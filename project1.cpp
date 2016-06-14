@@ -26,7 +26,7 @@ void sort1() {
 #include "project1.h"
 
 void Project1::foo(int &i, int *j, int k) {
-	i = 1;
+  i = 1;
   *j = 101;
   k = 1000;
 }
@@ -36,15 +36,22 @@ void Project1::bar()
   int i = 10;
   int j = 100;
   int k = 1000;
+
   int *l = &i;
+  (void)l; // Remove compiler warning.
+
   int &m = i;
   int *a = &m;
   *a = 10;
   std::cout << "\ni=" << i << "\tm=" <<  m;
   foo (m, &j, k);
+
+#ifndef NDEBUG
   std::cout << "\ni=" << i;
   std::cout << "\nj=" << j;
   std::cout << "\nk=" << k;
+  std::cout << "\nk=" << l;
+#endif
 }
 
 void Project1::increment_k() {
@@ -65,5 +72,3 @@ int independentMethod(int &i) {
   i = 0;
   return i+ 100;
 }
-
-int BinaryTree::Counter = 0;
