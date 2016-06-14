@@ -62,11 +62,8 @@ int Project1::get_i()
 }
 
 int independentMethod(int &i) {
-	i = 0;
+  i = 0;
   return i+ 100;
 }
-
-
-
 
 int BinaryTree::Counter = 0;

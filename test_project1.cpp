@@ -6,13 +6,13 @@
 
 // IndependentMethod is a test case - here, we have 2 tests for this 1 test case
 TEST(IndependentMethod, ResetsToZero) {
-	int i = 3;
+	int i = 5;
 	int res = independentMethod(i);
 	EXPECT_EQ(100, res);
 
-	i = 12;
+	i = 10;
 	independentMethod(i);
-	EXPECT_EQ(0,i);
+	EXPECT_EQ(0, i);
 }
 
 TEST(IndependentMethod, ResetsToZero2) {
@@ -52,10 +52,11 @@ protected:
 };
 
 // Test case must be called the class above
-// Also note: use TEST_F instead of TEST to access the test fixture (from google test primer)
+// Also note: use TEST_F instead of TEST to access
+// the test fixture (from google test primer)
 TEST_F(Project1Test, MethodBarDoesAbc) {
 	int i = 0;
-	p.foo(i); // we have access to p, declared in the fixture
+	p.inc(i); // we have access to p, declared in the fixture
 	EXPECT_EQ(1, i);
 }
 

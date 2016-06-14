@@ -16,7 +16,7 @@ public:
   }
 
   void foo(int &i, int *j, int k);
-  void foo(int i) {  }
+  void inc(int &i) { ++i; }
   void bar();
   void increment_k();
   int get_i();
