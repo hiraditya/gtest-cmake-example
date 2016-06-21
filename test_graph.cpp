@@ -37,8 +37,15 @@ protected:
 // Also note: use TEST_F instead of TEST to access
 // the test fixture (from google test primer)
 TEST_F(GraphTest, MethodBarDoesAbc) {
-	int i = 0;
-	EXPECT_EQ(0, i);
+  int V1[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+  int V2[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+
+  BinaryTree B;
+  for (int i = 0; i < 10; ++i) {
+    B.Insert(V1[i]);
+    B.Insert(V2[10 -i -1]);
+  }
+	EXPECT_EQ(B.GetRoot()->GetId(), 1);
 }
 
 // }  // namespace - could surround Project1Test in a namespace

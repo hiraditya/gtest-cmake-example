@@ -78,7 +78,11 @@ public:
 
   Node *GetRoot() { return Root; }
 
+  // Breadth First Traversal of the tree.
   void BFS(Node *N, std::vector<Node *>& V);
+
+  // Depth First Traversal of the tree.
+  void DFS(Node *N, std::vector<Node *>& V);
 
   bool InsertLeft(Node *R, int N);
 
@@ -105,4 +109,3 @@ inline std::ostream& operator<<(std::ostream &os, std::vector<Node*> &V) {
 }
 
 #endif // GRAPH_H
-

@@ -41,6 +41,53 @@ void BinaryTree::BFS(Node *N, std::vector<Node *> &V) {
   }
 }
 
+/*   A
+   B    C
+ D   E
+    F
+q = {B, A}
+q = {D, B, A}
+visit D
+pop D
+q = {B, A}
+visit B
+pop B
+push all the right children of B
+q = {F , E , A]
+Visite F
+pop F
+q = {E, A}
+visit E
+pop E
+.....
+q = {A}
+visit A
+put all the child of A after A
+q = {C}
+*/
+
+void BinaryTree::DFS(Node *N, std::vector<Node *> &V) {
+  std::list<Node *> WL;
+  std::set<Node *> Visited;
+  WL.push_front(N);
+  while (!WL.empty()) {
+    Node *T = WL.front();
+
+    // Visit the left child, put the child node in the WL
+    if (T->GetLeft() && !Visited.count(T->GetLeft()))
+      WL.push_front(T->GetLeft());
+
+    // Visit N;
+    Visited.insert(T);
+    WL.pop_front();
+    V.push_back(T);
+
+    // Visit the right child.
+    if (T->GetRight() && !Visited.count(T->GetRight()))
+      WL.push_front(T->GetRight());
+  }
+}
+
 bool BinaryTree::InsertLeft(Node *R, int N) {
   Node T(N, Counter++);
   Tree.push_back(T);
@@ -49,6 +96,13 @@ bool BinaryTree::InsertLeft(Node *R, int N) {
   return true;
 }
 
+/*
+     |
+     R
+   /   \
+  /     \
+ B  Node(N, Counter++)
+*/
 bool BinaryTree::InsertRight(Node *R, int N) {
   Node T(N, Counter++);
   Tree.push_back(T);
