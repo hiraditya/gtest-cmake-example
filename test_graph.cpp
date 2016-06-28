@@ -3,7 +3,7 @@
 
 #include "graph.h"
 
-// The fixture for testing class Project1. From google test primer.
+// The fixture for testing class GraphTest.
 class GraphTest : public ::testing::Test {
 protected:
 	// You can remove any or all of the following functions if its body
@@ -36,16 +36,15 @@ protected:
 // Test case must be called the class above
 // Also note: use TEST_F instead of TEST to access
 // the test fixture (from google test primer)
-TEST_F(GraphTest, MethodBarDoesAbc) {
+TEST_F(GraphTest, TestRootID) {
   int V1[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
   int V2[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
-  BinaryTree B;
   for (int i = 0; i < 10; ++i) {
-    B.Insert(V1[i]);
-    B.Insert(V2[10 -i -1]);
+    T.Insert(V1[i]);
+    T.Insert(V2[10 -i -1]);
   }
-	EXPECT_EQ(B.GetRoot()->GetId(), 1);
+	EXPECT_EQ(T.GetRoot()->GetId(), 0);
 }
 
 // }  // namespace - could surround Project1Test in a namespace
