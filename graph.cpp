@@ -74,8 +74,10 @@ void BinaryTree::DFS(Node *N, std::vector<Node *> &V) {
     Node *T = WL.front();
 
     // Visit the left child, put the child node in the WL
-    if (T->GetLeft() && !Visited.count(T->GetLeft()))
+    if (T->GetLeft() && !Visited.count(T->GetLeft())) {
       WL.push_front(T->GetLeft());
+      continue;
+    }
 
     // Visit N;
     Visited.insert(T);
