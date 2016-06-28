@@ -66,7 +66,9 @@ public:
 class BinaryTree {
   Node *Root;
   static int Counter;
-  std::list<Node> Tree;
+  typedef std::list<Node> TreeT;
+  TreeT Tree;
+
 public:
 
   BinaryTree()
@@ -85,6 +87,15 @@ public:
   }
 
   const Node *GetRoot() const { return Root; }
+
+  typedef TreeT::iterator iterator;
+  typedef TreeT::const_iterator const_iterator;
+
+  iterator begin() { return Tree.begin(); }
+  iterator end() { return Tree.end(); }
+
+  const_iterator begin() const { return Tree.begin(); }
+  const_iterator end() const { return Tree.end(); }
 
   // Breadth First Traversal of the tree.
   void BFS(const Node *N, std::vector<const Node *>& V) const;
