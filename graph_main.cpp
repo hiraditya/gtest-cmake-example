@@ -13,11 +13,11 @@ int main() {
   // Dump the graphviz representation for visualization.
   B.Dump();
 
-  std::vector<Node*> BFSTraversal;
+  std::vector<const Node*> BFSTraversal;
   B.BFS(B.GetRoot(), BFSTraversal);
   std::cout << "\nBFS output:" << BFSTraversal;
 
-  std::vector<Node*> DFSTraversal;
+  std::vector<const Node*> DFSTraversal;
   B.DFS(B.GetRoot(), DFSTraversal);
   std::cout << "\nDFS output:" << DFSTraversal;
 

@@ -26,11 +26,19 @@ public:
     return Right;
   }
 
-  int GetData() {
+  const Node *GetLeft() const {
+    return Left;
+  }
+
+  const Node *GetRight() const {
+    return Right;
+  }
+
+  int GetData() const {
     return Data;
   }
 
-  int GetId() {
+  int GetId() const {
     return Id;
   }
 
@@ -50,8 +58,8 @@ public:
     Id = d;
   }
 
-  void Dump(std::ostream &os);
-  void DumpGV();
+  void Dump(std::ostream &os) const;
+  void DumpGV() const;
 };
 
 
@@ -76,13 +84,13 @@ public:
     Root->SetId(0);    
   }
 
-  Node *GetRoot() { return Root; }
+  const Node *GetRoot() const { return Root; }
 
   // Breadth First Traversal of the tree.
-  void BFS(Node *N, std::vector<Node *>& V);
+  void BFS(const Node *N, std::vector<const Node *>& V) const;
 
   // Depth First Traversal of the tree.
-  void DFS(Node *N, std::vector<Node *>& V);
+  void DFS(const Node *N, std::vector<const Node *>& V) const;
 
   bool InsertLeft(Node *R, int N);
 
@@ -94,15 +102,15 @@ public:
 
   void BuildBinaryTree(std::vector<int> &V);
 
-  void Dump();
+  void Dump() const;
 };
 
-inline std::ostream& operator<<(std::ostream &os, Node* N) {
+inline std::ostream& operator<<(std::ostream &os, const Node* N) {
   N->Dump(os);
   return os;
 }
 
-inline std::ostream& operator<<(std::ostream &os, std::vector<Node*> &V) {
+inline std::ostream& operator<<(std::ostream &os, std::vector<const Node*> &V) {
   for (unsigned i = 0; i < V.size(); ++i)
     os << V[i];
   return os;

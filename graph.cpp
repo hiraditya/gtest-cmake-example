@@ -9,12 +9,12 @@
 #include <set>
 #include <vector>
 
-void Node::Dump(std::ostream &os) {
+void Node::Dump(std::ostream &os) const {
   os << "\nNodeId: " << GetId()
      << ", Data: " << GetData();
 }
 
-void Node::DumpGV() {
+void Node::DumpGV() const {
   if (GetLeft()) {
     std::cout << "\nnode" << GetId();    
     std::cout <<  ":left -> node" << GetLeft()->GetId();
@@ -25,12 +25,12 @@ void Node::DumpGV() {
   }
 }
 
-void BinaryTree::BFS(Node *N, std::vector<Node *> &V) {
-  std::queue<Node *> WL;
-  std::set<Node *> Visited;
+void BinaryTree::BFS(const Node *N, std::vector<const Node *> &V) const {
+  std::queue<const Node *> WL;
+  std::set<const Node *> Visited;
   WL.push(N);
   while (!WL.empty()) {
-    Node *T = WL.front();
+    const Node *T = WL.front();
     WL.pop();
     Visited.insert(T);
     V.push_back(T);
@@ -66,12 +66,12 @@ put all the child of A after A
 q = {C}
 */
 
-void BinaryTree::DFS(Node *N, std::vector<Node *> &V) {
-  std::list<Node *> WL;
-  std::set<Node *> Visited;
+void BinaryTree::DFS(const Node *N, std::vector<const Node *> &V) const {
+  std::list<const Node *> WL;
+  std::set<const Node *> Visited;
   WL.push_front(N);
   while (!WL.empty()) {
-    Node *T = WL.front();
+    const Node *T = WL.front();
 
     // Visit the left child, put the child node in the WL
     if (T->GetLeft() && !Visited.count(T->GetLeft())) {
@@ -144,8 +144,8 @@ void BinaryTree::BuildBinaryTree(std::vector<int> &V) {
     Insert(V[i]);
 }
 
-void BinaryTree::Dump() {
-  std::vector<Node *> V;
+void BinaryTree::Dump() const {
+  std::vector<const Node *> V;
   BFS(Root, V);
   std::cout << "\ndigraph g {\nnode[shape=record]";
   for (unsigned i = 0; i < V.size(); ++i)
