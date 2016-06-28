@@ -94,7 +94,7 @@ bool BinaryTree::InsertLeft(Node *R, int N) {
   Node T(N, Counter++);
   Tree.push_back(T);
   R->SetLeft(&Tree.back());
-  std::cout << "\n" << Tree.back().GetId() << "->" << R->GetId();
+  //std::cout << "\n" << Tree.back().GetId() << "->" << R->GetId();
   return true;
 }
 
@@ -109,7 +109,7 @@ bool BinaryTree::InsertRight(Node *R, int N) {
   Node T(N, Counter++);
   Tree.push_back(T);
   R->SetRight(&Tree.back());
-  std::cout << "\n" << R->GetId() << "->" << Tree.back().GetId();
+  //std::cout << "\n" << R->GetId() << "->" << Tree.back().GetId();
   return true;
 }
 
@@ -152,7 +152,8 @@ void BinaryTree::Dump() {
     std::cout << "\nnode"
               << V[i]->GetId() << "[label=\""
               <<"{"
-              << V[i]->GetData()
+              << V[i]->GetId()
+              << "(" << V[i]->GetData() << ")"
               << "|{<left>|<right>}}\"]";
 
   std::cout << "\n\n";

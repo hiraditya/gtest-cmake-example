@@ -10,13 +10,17 @@ int main() {
     B.Insert(V1[i]);
     B.Insert(V2[10 -i -1]);
   }
-
-  std::vector<Node*> V;
-  B.BFS(B.GetRoot(), V);
-  std::cout << V;
-
   // Dump the graphviz representation for visualization.
   B.Dump();
+
+  std::vector<Node*> BFSTraversal;
+  B.BFS(B.GetRoot(), BFSTraversal);
+  std::cout << "\nBFS output:" << BFSTraversal;
+
+  std::vector<Node*> DFSTraversal;
+  B.DFS(B.GetRoot(), DFSTraversal);
+  std::cout << "\nDFS output:" << DFSTraversal;
+
   return 0;
 }
 // inexact algorithm
