@@ -9,7 +9,8 @@
 #include <iterator>
 #include <algorithm>
 
-bool iseven(int n) {
+template<typename T>
+bool iseven(const T &n) {
   return n%2 == 0;
 }
 
@@ -28,11 +29,11 @@ void learn_algorithms() {
 
   std::cout << "Copying all odd elements to std::cout" << std::endl;
   std::copy_if(v2.begin(), v2.end(), std::ostream_iterator<T>(std::cout, "\n"),
-               [](int n){ return n%2 != 0; });
+               [](const T &n){ return n%2 != 0; });
 
   std::cout << "Copying all even elements to std::cout" << std::endl;
   std::copy_if(v2.begin(), v2.end(), std::ostream_iterator<T>(std::cout, "\n"),
-               iseven);
+               iseven<T>);
 }
 
 template<typename T>
