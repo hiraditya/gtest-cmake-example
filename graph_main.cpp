@@ -1,6 +1,7 @@
 #include"graph.h"
 #include <vector>
 #include <algorithm>
+#include "stl_containers.h"
 
 /*
 
@@ -59,8 +60,8 @@ int main(int argc, char *argv[]) {
   std::vector<const Node*> DFSTraversal;
   B.DFS(B.GetRoot(), DFSTraversal);
   std::cout << "\nDFS output:" << DFSTraversal;*/
-  testAlgorithm(B, std::atoi(argv[1]));
-
+  //testAlgorithm(B, std::atoi(argv[1]));
+  stl_container_algo();
   return 0;
 }
 // inexact algorithm
