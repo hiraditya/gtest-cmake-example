@@ -34,6 +34,13 @@ void learn_algorithms() {
   std::cout << "Copying all even elements to std::cout" << std::endl;
   std::copy_if(v2.begin(), v2.end(), std::ostream_iterator<T>(std::cout, "\n"),
                iseven<T>);
+  std::copy(v.begin(), v.end(), std::ostream_iterator<T>(std::cout, "\n"));
+  std::cout << "Separating odd and even elements:" << std::endl;
+  std::partition(v.begin(), v.end(), iseven<T>);
+  std::copy(v.begin(), v.end(), std::ostream_iterator<T>(std::cout, "\n"));
+  std::cout << "Separating odd and even elements [stabile]:" << std::endl;
+  std::stable_partition(v.begin(), v.end(), iseven<T>);
+  std::copy(v.begin(), v.end(), std::ostream_iterator<T>(std::cout, "\n"));
 }
 
 template<typename T>
