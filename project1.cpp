@@ -1,8 +1,8 @@
 
 /*Types of errors:
-1. Lexical error. (itn i)
+1. Lexical error. (int i)
 2. Syntactic error. (type mismatch etc)
-3. Semantic errors.
+3. Semantic errors. (using uninitialized variables, adding string to a number, unintended type conversion)
 4. Logical error.*/
 
 #include "project1.h"
