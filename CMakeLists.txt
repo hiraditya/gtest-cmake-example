@@ -22,6 +22,8 @@ add_executable(project1 main.cpp)
 add_library(graph_lib graph.cpp)
 add_executable(graph graph_main.cpp)
 
+add_executable(rotate rotate.cpp)
+
 # Key idea: SEPARATE OUT your main() function into its own file so it can be its
 # own executable. Separating out main() means you can add this library to be
 # used elsewhere.
