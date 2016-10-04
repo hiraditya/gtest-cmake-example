@@ -1,5 +1,8 @@
-#include <iostream>
+
 #include "project1.h"
+
+#include <iostream>
+#include <cstdlib>
 
 using namespace std;
 
@@ -25,20 +28,20 @@ int main() {
   std::cout << "Last statement\n";
 
 
-  int *p = (int* ) malloc (sizeof(int) *10);
-  int *q = (int* ) malloc (sizeof(int) *10);
-  if (p) {
+  int *p1 = (int* ) malloc (sizeof(int) *10);
+  int *q1 = (int* ) malloc (sizeof(int) *10);
+  if (p1) {
     // dakjhfakdshf
   } else {
     return -1;
   }
-  if (q) {
+  if (q1) {
     // dakjhfakdshf
   } else {
-    free(p);
+    free(p1);
     return -2; // error report
   }
-  free(p);
-  free(q);
+  free(p1);
+  free(q1);
 }
 
