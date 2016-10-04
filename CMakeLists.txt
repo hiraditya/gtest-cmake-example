@@ -24,6 +24,8 @@ add_executable(graph graph_main.cpp)
 
 add_executable(rotate rotate.cpp)
 
+add_executable(inheritance inheritance.cpp)
+add_executable(composition composition.cpp)
 # Key idea: SEPARATE OUT your main() function into its own file so it can be its
 # own executable. Separating out main() means you can add this library to be
 # used elsewhere.

@@ -2,6 +2,7 @@
 #include "stl_containers.h"
 #include <algorithm>
 #include <vector>
+#include <iterator>
 
 template <typename T> void printVector(std::vector<T> &V) {
   std::for_each(V.begin(), V.end(), [](const T &t) { std::cout << t << " "; });
@@ -11,15 +12,17 @@ struct RAI_TAG {};
 
 class RAI {
 private:
-  operator+();
+  RAI &operator+();
 
 public:
   typedef RAI_TAG tag_type;
 };
 
 template <typename T> class Vec {
+  T* root;
+  unsigned N;
 public:
-  typedef std::forward_iterator iterator;
+  typedef T* iterator;
   iterator begin() { root; }
   iterator end() { root + N; }
 };
@@ -27,7 +30,9 @@ public:
 template <typename RAI> void __rotate(RAI b, RAI e, RAI p, RAI_TAG t) {}
 
 template <typename T> void rotate(T b, T e, T p) {
-  return __rotate(b, e, p, I::tag_type);
+  typedef typename std::iterator_traits<T>::
+    iterator_category _IterCategory;
+  return __rotate(b, e, p, _IterCategory());
 }
 
 void testAlgorithm(std::vector<int> &V1) {
